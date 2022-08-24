@@ -15,12 +15,12 @@ data class Parking(val vehicles: MutableSet<Vehicle>): Parkable(vehicles) {
 
     fun listVehicles(){
         println("Vehicles in the parking:")
-        vehicles.forEach { println(it.plate)
-        }
+        vehicles.forEach {vehicle -> println(vehicle.plate)}
+            //println(it.plate) }
     }
 
     fun showParkingData(){
-        println("Total earnings: $earnings")
-        println("Total check-outs: $totalCheckOuts")
+        println("Total earnings: $parkingData(first)")
+        println("Total check-outs: ${parkingData.second}")
     }
 }

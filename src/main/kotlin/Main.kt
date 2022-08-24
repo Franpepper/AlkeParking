@@ -31,14 +31,14 @@ fun main() {
     )
 
 
-    listOfVehicles.map{
-        println(parking.addVehicle(it))
+    listOfVehicles.map{vehicle -> println(parking.addVehicle(vehicle))
+        //println(parking.addVehicle(it))
    }
 
     println(parking.checkOutVehicle("FF666FF"))
     println(parking.checkOutVehicle("AA222AA"))
-    println(parking.checkOutVehicle("FF667FF"))
-    println(parking.checkOutVehicle("BB222BB"))
+    println(parking.checkOutVehicle("FF"))
+    println(parking.checkOutVehicle(" bb 222 bb "))
 
     println(parking.listVehicles())
     println(parking.showParkingData())

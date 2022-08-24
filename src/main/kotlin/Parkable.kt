@@ -1,11 +1,14 @@
 import java.lang.Math.ceil
+import java.util.*
 
 open class Parkable(private val vehicle: MutableSet<Vehicle>) {
     var earnings: Int = 0
     var totalCheckOuts: Int = 0
     fun checkOutVehicle(plate: String): String {
 
-        val isVehicleParked = vehicle.filter { it.plate == plate }
+        val isVehicleParked = vehicle.filter {
+            it.plate == plate.uppercase(Locale.getDefault()).replace(" ", "")
+        }
         if (isVehicleParked.isNotEmpty()){
             val vehicleToCheckOut = isVehicleParked[0]
             var parkingFee = calculateFee(vehicleToCheckOut.vehicleType, vehicleToCheckOut.parkedTime.toDouble())
